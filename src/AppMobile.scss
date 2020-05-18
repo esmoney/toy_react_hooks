@@ -1,0 +1,309 @@
+@import "../theme/variables";
+
+@media #{$mobile} {
+  .mat-menu-panel {
+    max-height: 300px;
+  }
+
+  .cmc-menu-modal {
+    .mat-dialog-container {
+      padding: 0;
+    }
+  }
+
+  .full-screen-modal {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw !important;
+
+    .mat-dialog-container {
+      padding: 0 !important;
+    }
+  }
+
+  .login-modal {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    .mat-dialog-container {
+      padding: 0 !important;
+      overflow: hidden;
+      border-radius: 0;
+    }
+  }
+
+  .test-modal,
+  .grade-modal,
+  .post-write-modal,
+  .post-detail-modal,
+  .community-create-modal,
+  .community-edit-modal {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    .mat-dialog-container {
+      padding: 0 !important;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: hidden;
+      border-radius: 0;
+    }
+  }
+
+  .community-withdrawal-modal {
+    width: 360px;
+    height: 260px;
+    max-height: 100vh;
+
+    .mat-dialog-container {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  .give-rate-modal {
+    // width: vw(840);
+    // height: vw(1200);
+    // min-height: vw(1200);
+    // max-height: 100vh;
+    width: 80vw;
+    height: auto;
+
+    .mat-dialog-container {
+      padding: 0 !important;
+      overflow: hidden;
+    }
+  }
+
+  .find-password-modal {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    .mat-dialog-container {
+      padding: 0 !important;
+      overflow: hidden;
+    }
+  }
+
+  .message-dialog-box {
+    .mat-dialog-container {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-bottom: 80px;
+      box-shadow: 1px 5px 20px 0px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+
+  pdf-viewer {
+    display: block;
+    max-width: 830px;
+    max-height: 465px;
+
+    .pdfViewer {
+      max-width: 830px;
+      max-height: 465px;
+      overflow: hidden;
+
+      .canvasWrapper {
+        max-width: 830px !important;
+        max-height: 465px !important;
+        display: flex;
+        justify-content: center;
+        background: #cccccc;
+
+        canvas {
+          max-width: 830px !important;
+          max-height: 465px !important;
+          // 썸네일때문에 선순위 제거
+          // width: auto !important;
+          // height: auto !important;
+        }
+      }
+    }
+  }
+
+  .full-screen-slide-modal {
+    pdf-viewer {
+      .pdfViewer {
+        max-width: 100% !important;
+        max-height: 100vh !important;
+
+        .page {
+          height: 100vh !important;
+        }
+
+        .canvasWrapper {
+          max-width: 100% !important;
+          max-height: 100vh !important;
+          align-items: center;
+
+          canvas {
+            max-width: 100% !important;
+            max-height: 100% !important;
+            // full screen 상태에서 기존 830, 465로 잡혀 있을테니 거기서 auto 맞추자 후순위 css
+            width: auto !important;
+            height: auto !important;
+          }
+        }
+      }
+    }
+  }
+
+  .cmc-menu {
+    width: 154px;
+    box-shadow: none;
+
+    .mat-menu-content {
+      border: solid 1px #c1c9d3;
+
+      .trigger {
+        height: auto !important;
+        display: block;
+        padding: 0;
+      }
+
+      .mat-menu-item:hover,
+      .mat-menu-item:focus,
+      .mat-menu-item-highlighted {
+        background: #ffffff;
+      }
+
+      button {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        color: $slate;
+
+        img {
+          width: 6px;
+          height: 10px;
+          margin-left: 8px;
+        }
+      }
+
+      button:first-child {
+        border-bottom: 0;
+      }
+
+      button:hover,
+      button:active {
+        background: #f6f8fa;
+      }
+    }
+
+    .mat-menu-item-submenu-trigger::after {
+      display: none !important;
+    }
+  }
+
+  .cmc-sub-menu {
+    min-width: 190px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #f6f8fa;
+    border: solid 1px #c1c9d3;
+    box-shadow: none;
+
+    .mat-menu-content {
+      padding: 0 !important;
+
+      button {
+        font-size: 15px;
+        color: $slate;
+        height: 50px;
+        padding-left: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      button:hover,
+      button:active {
+        background: #ffffff;
+      }
+    }
+  }
+
+  .file-attach {
+    width: auto;
+    height: auto;
+    max-width: 610px;
+    border: solid 1px #c1c9d3;
+    box-shadow: none;
+
+    .mat-menu-content {
+      padding: 0 !important;
+
+      button {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        a {
+          font-size: 13px;
+          color: $blue-grey;
+          line-height: 1.6;
+        }
+      }
+
+      button:hover,
+      button:active {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  .sort-filter {
+    // width: 220px;
+    // padding-top: 8px;
+    // padding-bottom: 8px;
+    border: solid 1px #c1c9d3;
+    box-shadow: none;
+
+    height: auto;
+    max-height: 300px!important;
+
+    .mat-menu-content {
+      padding: 0 !important;
+
+      button {
+        // font-size: 12px;
+        color: $blue-grey;
+        height: 45px;
+        padding-left: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      button:hover,
+      button:active {
+        background: rgba(150, 163, 181, 0.1);
+      }
+    }
+  }
+
+  .web-item,
+  .web-only {
+    display: none !important;
+  }
+
+  .load-more-wrapper button img {
+    width: 40px;
+    height: 40px;
+  }
+
+}

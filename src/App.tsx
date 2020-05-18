@@ -1,14 +1,24 @@
 import React from 'react';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import { Redirect, Route, Router, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import Lecture from "./pages/lecture";
+import Header from './commons/components/organisms/Header';
 
-const App = () => {
+const hist = createBrowserHistory();
+
+function App() {
   return (
     <>
-      <TodoForm />
-      <TodoList />
+      <Header emphasize="" normal="" />
+      <Router history={hist}>
+        <Switch>
+          <Route path="/diva" component={Lecture} />
+          <Redirect from="/" to="/diva/lecture" />
+        </Switch>
+      </Router>
+      {/* <Footer /> */}
     </>
   );
-};
+}
 
 export default App;

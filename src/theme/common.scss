@@ -1,0 +1,142 @@
+@import './variables';
+
+div {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+html {
+  -ms-overflow-style: none;
+}
+
+body {
+  margin: 0 !important;
+  font-family: NanumSquareWeb, sans-serif !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  //scrollbar-base-color: #fff;
+  //scrollbar-face-color: #fff;
+  //scrollbar-3dlight-color: #fff;
+  //scrollbar-highlight-color: #fff;
+  //scrollbar-track-color: #fff;
+  //scrollbar-arrow-color: #fff;
+  //scrollbar-shadow-color: #fff;
+  //scrollbar-dark-shadow-color: #fff;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+  span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+input:-webkit-autofill {
+  //display: none;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-offset: -2px;
+}
+
+:focus {
+  outline: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+@media #{$pc} {
+
+  input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+.overflowhidden {
+  overflow: hidden;
+}
+
+.overflowscroll {
+  overflow: scroll;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.4 !important;
+  height: 1.4em;
+}
+
+.line-clamp2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.4 !important;
+  height: 1.4em;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mat-icon {
+  color: $main !important;
+}
+
+.mat-calendar-body-selected {
+  background-color: $main;
+  color: rgba(255, 255, 255, .87);
+}

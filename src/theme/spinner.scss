@@ -1,0 +1,350 @@
+/**
+ * Created by andy on 23/03/2017
+ * As part of cafe-1-template
+ *
+ * Copyright (C) Applicat (www.applicat.co.kr) - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Andy Yoon Yong Shin <developer@applicat.co.kr>, 23/03/2017
+ *
+ * Updater    수정자 - PHILIP 24/03/2017
+ */
+
+#loading-page {
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  svg {
+    width: 35px;
+    height: 35px;
+    stroke: $main;
+    fill: $main;
+    circle {
+      stroke: $main;
+    }
+  }
+}
+// Spinners
+// --------------------------------------------------
+
+$color-name: "spinner-color";
+$color-base: red;
+
+/* ios */
+/// @prop - Color of the ios spinner
+$spinner-ios-ios-color: $main !default;
+
+/// @prop - Color of the bubbles spinner
+$spinner-ios-bubbles-color: $main !default;
+
+/// @prop - Color of the circles spinner
+$spinner-ios-circles-color: $main !default;
+
+/// @prop - Color of the crescent spinner
+$spinner-ios-crescent-color: $main !default;
+
+/// @prop - Color of the dots spinner
+$spinner-ios-dots-color: $main !default;
+
+/* android */
+/// @prop - Color of the ios spinner
+$spinner-md-ios-color: $main !default;
+
+/// @prop - Color of the bubbles spinner
+$spinner-md-bubbles-color: $main !default;
+
+/// @prop - Color of the circles spinner
+$spinner-md-circles-color: $main !default;
+
+/// @prop - Color of the crescent spinner
+$spinner-md-crescent-color: $main !default;
+
+/// @prop - Color of the dots spinner
+$spinner-md-dots-color: $main !default;
+
+/* window */
+/// @prop - Color of the ios spinner
+$spinner-wp-ios-color: $main !default;
+
+/// @prop - Color of the bubbles spinner
+$spinner-wp-bubbles-color: $main !default;
+
+/// @prop - Color of the circles spinner
+$spinner-wp-circles-color: $main !default;
+
+/// @prop - Color of the crescent spinner
+$spinner-wp-crescent-color: $main !default;
+
+/// @prop - Color of the dots spinner
+$spinner-wp-dots-color: $main !default;
+
+
+#az-spinner {
+  position: relative;
+  display: inline-block;
+
+  width: 35px;
+  height: 35px;
+}
+
+#az-spinner svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translateZ(0);
+}
+
+#az-spinner.spinner-paused svg {
+  animation-play-state: paused;
+}
+
+// Spinner: ios / ios-small
+// --------------------------------------------------
+
+.spinner-ios line,
+.spinner-ios-small line {
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.spinner-ios svg,
+.spinner-ios-small svg {
+  animation: spinner-fade-out 1s linear infinite;
+}
+
+// Spinner: bubbles
+// --------------------------------------------------
+
+.spinner-bubbles svg {
+  animation: spinner-scale-out 1s linear infinite;
+}
+
+// Spinner: circles
+// --------------------------------------------------
+
+.spinner-circles svg {
+  animation: spinner-fade-out 1s linear infinite;
+}
+
+// Spinner: crescent
+// --------------------------------------------------
+
+.spinner-crescent circle {
+  fill: transparent;
+  stroke-width: 4px;
+  stroke-dasharray: 128px;
+  stroke-dashoffset: 82px;
+}
+
+.spinner-crescent svg {
+  animation: spinner-rotate 1s linear infinite;
+}
+
+// Spinner: dots
+// --------------------------------------------------
+
+.spinner-dots circle {
+  stroke-width: 0;
+}
+
+.spinner-dots svg {
+  transform-origin: center;
+
+  animation: spinner-dots 1s linear infinite;
+}
+
+// Animation Keyframes
+// --------------------------------------------------
+
+@keyframes spinner-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spinner-scale-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-dots {
+  0% {
+    opacity: .9;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: .3;
+    transform: scale(.4, .4);
+  }
+  100% {
+    opacity: .9;
+    transform: scale(1, 1);
+  }
+}
+
+// iOS Spinner
+// --------------------------------------------------
+
+
+
+.spinner-ios-ios line,
+.spinner-ios-ios-small line {
+  stroke: $spinner-ios-ios-color;
+}
+
+.spinner-ios-bubbles circle {
+  fill: $spinner-ios-bubbles-color;
+}
+
+.spinner-ios-circles circle {
+  fill: $spinner-ios-circles-color;
+}
+
+.spinner-ios-crescent circle {
+  stroke: $spinner-ios-crescent-color;
+}
+
+.spinner-ios-dots circle {
+  fill: $spinner-ios-dots-color;
+}
+
+// Generate iOS Spinner Colors
+// --------------------------------------------------
+
+.spinner-ios-#{$color-name} {
+
+  &.spinner-ios line,
+  &.spinner-ios-small line,
+  &.spinner-crescent circle {
+    stroke: $color-base;
+  }
+
+  &.spinner-bubbles circle,
+  &.spinner-circles circle,
+  &.spinner-dots circle {
+    fill: $color-base;
+  }
+
+}
+
+// Material Design Spinner
+// --------------------------------------------------
+
+
+.spinner-md-ios line,
+.spinner-md-ios-small line {
+  stroke: $spinner-md-ios-color;
+}
+
+.spinner-md-bubbles circle {
+  fill: $spinner-md-bubbles-color;
+}
+
+.spinner-md-circles circle {
+  fill: $spinner-md-circles-color;
+}
+
+.spinner-md-crescent circle {
+  stroke: $spinner-md-crescent-color;
+}
+
+.spinner-md-dots circle {
+  fill: $spinner-md-dots-color;
+}
+
+// Generate Material Design Spinner Colors
+// --------------------------------------------------
+
+.spinner-md-#{$color-name} {
+
+  &.spinner-ios line,
+  &.spinner-ios-small line,
+  &.spinner-crescent circle {
+    stroke: $color-base;
+  }
+
+  &.spinner-bubbles circle,
+  &.spinner-circles circle,
+  &.spinner-dots circle {
+    fill: $color-base;
+  }
+
+}
+
+// Windows Spinner
+// --------------------------------------------------
+
+
+
+.spinner-wp-ios line,
+.spinner-wp-ios-small line {
+  stroke: $spinner-wp-ios-color;
+}
+
+.spinner-wp-bubbles circle {
+  fill: $spinner-wp-bubbles-color;
+}
+
+.spinner-wp-circles circle {
+  fill: $spinner-wp-circles-color;
+}
+
+.spinner-wp-crescent circle {
+  stroke: $spinner-wp-crescent-color;
+}
+
+.spinner-wp-dots circle {
+  fill: $spinner-wp-dots-color;
+}
+
+// Generate Windows Spinner Colors
+// --------------------------------------------------
+
+.spinner-wp-#{$color-name} {
+
+  &.spinner-ios line,
+  &.spinner-ios-small line,
+  &.spinner-crescent circle {
+    stroke: $color-base;
+  }
+
+  &.spinner-bubbles circle,
+  &.spinner-circles circle,
+  &.spinner-dots circle {
+    fill: $color-base;
+  }
+
+}

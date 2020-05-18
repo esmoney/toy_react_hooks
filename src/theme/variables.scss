@@ -1,0 +1,56 @@
+// $mobile: "only screen and (max-width : 640px)";
+// $pc: "only screen and (min-width : 641px)";
+$mobile: "only screen and (max-width : 768px)";
+$pc: "only screen and (min-width : 769px)";
+
+$font-path: "../assets/fonts";
+$blue-grey: #8190a7;
+$blue-grey-two: #8191a8;
+$slate: #525c74;
+$brownish-grey: #666666;
+$cloudy-blue: #c1c9d3;
+$pale-grey: #f6f8fa;
+$blue: #168dfe;
+$pink: #ff3753;
+$main: #75a6ef;
+$main2: 000000;
+
+$border-color: #eaeaea;
+
+$grey1: #fafafa;
+$grey2: #f5f5f5;
+$grey3: #f0f0f0;
+$grey4: #eaeaea;
+$grey5: #cccccc;
+$grey6: #bbbbbb;
+$grey7: #999999;
+$grey8: #666666;
+$grey9: #444444;
+$grey10: #333333;
+$black: #000000;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@function vw($px) {
+  @return ($px/768) * 100vw;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@mixin font-size($min-font-size, $max-font-size) {
+  font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - 320px) / #{strip-unit(1920 - 320)}));
+}
+
+
+//CADE
+$image-path: "/assets/images/cade/";
+$slate: #525c74;
+
+//DIABETES
+// $image-path: "/assets/images/diabetes/";
+// $slate: red;

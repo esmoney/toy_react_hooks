@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "theme/common";
+@import "theme/spinner";
+@import "app/app.component";
+@import "app/app.component.mobile";
+
+@import "~swiper/dist/css/swiper.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
