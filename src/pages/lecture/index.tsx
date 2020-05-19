@@ -1,7 +1,8 @@
 import * as React from 'react';
+import './index.scss';
+import { ILectureProps } from './User';
 
-interface ILectureProps {
-}
+
 
 const Lecture: React.FunctionComponent<ILectureProps> = (props) => {
     return (

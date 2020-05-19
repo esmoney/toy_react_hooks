@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "theme/common";
+@import "theme/spinner";
+@import "App";
+@import "AppMobile";
+
+ng-image-slider
+  .ng-image-slider
+  .ng-image-slider-container
+  .main
+  .main-inner
+  .img-div {
+  box-shadow: none;
+  border-radius: 0;
+
+  img {
+    border-radius: 0;
+  }
+}
+
+// 광고 B,C
+.ads-wrapper {
+  position: relative;
+  padding: 0 34px;
+
+  .ads-btn {
+    position: absolute;
+    top: 0;
+    width: 34px;
+    height: 100%;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.ad-prev {
+      left: 0;
+
+      img {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.ad-next {
+      right: 0;
+
+      img {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  ng-image-slider {
+    display: flex;
+
+    .ng-image-slider {
+      .ng-image-slider-container .main .img-div {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0 8px;
+        position: relative;
+        cursor: pointer;
+        img {
+          border-radius: 0;
+          max-width: 80% !important;
+          max-height: 80% !important;
+          // max-height: 40px !important;
+        }
+
+        &::before {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          width: 1px;
+          height: 14px;
+          border: 1px solid #e2e2e2;
+          box-sizing: border-box;
+          content: "";
+        }
+      }
+    }
+  }
+}

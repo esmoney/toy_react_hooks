@@ -1,4 +1,4 @@
-@import "../theme/variables";
+@import "./theme/variables";
 
 @media #{$mobile} {
   .mat-menu-panel {
@@ -274,7 +274,7 @@
     box-shadow: none;
 
     height: auto;
-    max-height: 300px!important;
+    max-height: 300px !important;
 
     .mat-menu-content {
       padding: 0 !important;
@@ -305,5 +305,4 @@
     width: 40px;
     height: 40px;
   }
-
 }
